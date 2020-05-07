@@ -4,14 +4,14 @@ require 'pry'
 
 
 def load_library(path)
-  emoticons = YAML.load_file('path') 
+  emoticons = YAML.load_file('path')
   new_hash = {}
   emoticons.each do |expression, emoticon_text|
     new_hash[expression][:english] = emoticon_text[0]
     new_hash[expression][:japanese] = emoticon_text[1]
   end
   new_hash    
-  end 
+  end
 
 end
 
