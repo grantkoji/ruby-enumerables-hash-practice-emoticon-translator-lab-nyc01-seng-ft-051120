@@ -10,7 +10,7 @@ def load_library(path)
     new_hash[expression][:english] = emoticon_text[0]
     new_hash[expression][:japanese] = emoticon_text[1]
   end
-  new_hash    
+  new_hash
   end
 end
 
