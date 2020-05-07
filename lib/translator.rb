@@ -4,32 +4,21 @@ require 'pry'
 
 
 def load_library(path)
-  emoticons = YAML.load_file(path)
-  emoticon_hash = {}
-  emoticons.each do |key, value|
-    emoticon_hash[key] = {:english => value[0], :japanese => value[1]}
+  emoticons = YAML.load_file('path') 
+  new_hash = {}
+  emoticons.each do |expression, emoticon_text|
+    new_hash[expression][:english] = emoticon_text[0]
+    new_hash[expression][:japanese] = emoticon_text[1]
   end
-  emoticon_hash
+  new_hash    
+  end 
+
 end
 
 def get_japanese_emoticon(path, western_emoticon)
-  emoticon_hash = load_library(path)
-  japanese_match = "Sorry, that emoticon was not found"
-  emoticon_hash.each do |key, value|
-    if value[:english] == western_emoticon
-      japanese_match = value[:japanese]
-    end
-  end
-  japanese_match
+
 end
 
 def get_english_meaning(path, japanese_emoticon)
-  emoticon_hash = load_library(path)
-  english_meaning = "Sorry, that emoticon was not found"
-  emoticon_hash.each do |key, value|
-    if value[:japanese] == japanese_emoticon
-      english_meaning = key
-    end
-  end
-  english_meaning
+
 end
